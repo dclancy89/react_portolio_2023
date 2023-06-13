@@ -54,12 +54,13 @@ function Title() {
                 sx={(theme) => ({
                   fontFamily: "ShadowsIntoLight",
                   fontSize: "10rem",
-                  [theme.breakpoints.down("sm")]: {
-                    fontSize: "3rem",
-                  },
                   [theme.breakpoints.down("md")]: {
                     fontSize: "6rem",
                   },
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "3rem",
+                  },
+
                   fontWeight: "bold",
                 })}
               >
@@ -70,11 +71,11 @@ function Title() {
                 sx={(theme) => ({
                   fontFamily: "ShadowsIntoLight",
                   fontSize: "4rem",
-                  [theme.breakpoints.down("sm")]: {
-                    fontSize: "1.5rem",
-                  },
                   [theme.breakpoints.down("md")]: {
                     fontSize: "3rem",
+                  },
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "1.5rem",
                   },
                 })}
               >
@@ -85,11 +86,11 @@ function Title() {
                 sx={(theme) => ({
                   fontFamily: "ShadowsIntoLight",
                   fontSize: "4rem",
-                  [theme.breakpoints.down("sm")]: {
-                    fontSize: "1.5rem",
-                  },
                   [theme.breakpoints.down("md")]: {
                     fontSize: "3rem",
+                  },
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "1.5rem",
                   },
                 })}
               >
