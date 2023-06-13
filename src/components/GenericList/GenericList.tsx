@@ -8,7 +8,13 @@ const GenericList = (props: { listItems: any[] }) => {
       <List>
         {listItems.map((item, idx) => {
           return (
-            <ListItem key={idx}>
+            <ListItem
+              key={idx}
+              sx={{
+                paddingTop: "4px !important",
+                paddingBottom: "4px !important",
+              }}
+            >
               <ListItemIcon sx={{ minWidth: "25px" }}>
                 <CircleIcon sx={{ color: "white", fontSize: "10px" }} />
               </ListItemIcon>

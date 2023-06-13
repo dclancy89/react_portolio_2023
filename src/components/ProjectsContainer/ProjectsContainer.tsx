@@ -1,11 +1,13 @@
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import SingleProject from "../Project/SingleProject";
 import { Project } from "../../types/Project";
 
-import { createClient, EntryCollection } from "contentful";
+import { createClient } from "contentful";
 import { useEffect, useState } from "react";
 
 import { buildEntriesData } from "../../utils/buildEntriesData";
+
+import { colors } from "../../constants";
 
 const ProjectsContainer = () => {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -38,6 +40,18 @@ const ProjectsContainer = () => {
           minHeight: "100%",
         }}
       >
+        <Typography
+          variant="h2"
+          sx={{
+            color: colors.yellow,
+            marginTop: "6rem",
+            fontSize: "6rem",
+            fontFamily: "ShadowsIntoLight",
+            fontWeight: "bold",
+          }}
+        >
+          Notable Projects
+        </Typography>
         {projects?.length > 0 &&
           projects?.map((project) => {
             return <SingleProject project={project} />;

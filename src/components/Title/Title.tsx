@@ -1,90 +1,140 @@
-import { Box, Container, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Link,
+  ThemeProvider,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import "../../fonts/font.css";
+import { colors } from "../../constants";
 
 function Title() {
+  const theme = useTheme();
+
+  const styles = (theme: any) => ({
+    title: {
+      fontSize: "10rem",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "6rem",
+      },
+    },
+  });
+
   return (
     <>
-      <Container
-        maxWidth={false}
-        sx={{
-          backgroundColor: "yellow",
-          minHeight: "600px",
-          backgroundImage: "url(./quake2_2.png)",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          paddingLeft: "0 !important",
-          paddingRight: "0 !important",
-        }}
-      >
-        <Box
+      <ThemeProvider theme={theme}>
+        <Container
+          maxWidth={false}
           sx={{
-            width: "100%",
-            height: "100%",
+            backgroundColor: "yellow",
             minHeight: "600px",
-            backgroundColor: "rgba(0,0,0,0.6)",
-            color: "#ffc400",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
+            backgroundImage: "url(./quake2_2.png)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            paddingLeft: "0 !important",
+            paddingRight: "0 !important",
           }}
         >
           <Box
             sx={{
               width: "100%",
-              textAlign: "center",
-              padding: "4rem 0",
+              height: "100%",
+              minHeight: "600px",
+              backgroundColor: "rgba(0,0,0,0.6)",
+              color: colors.yellow,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
             }}
           >
-            <Typography
-              variant="h1"
+            <Box
               sx={{
-                fontFamily: "ShadowsIntoLight",
-                fontSize: "10rem",
-                fontWeight: "bold",
+                width: "100%",
+                textAlign: "center",
+                padding: "4rem 0",
               }}
             >
-              Daniel T Clancy
-            </Typography>
-            <Typography
-              variant="h3"
-              sx={{ fontFamily: "ShadowsIntoLight", fontSize: "4rem" }}
-            >
-              Father, Husband, Problem Solver
-            </Typography>
-            <Typography
-              variant="h3"
-              sx={{ fontFamily: "ShadowsIntoLight", fontSize: "4rem" }}
-            >
-              Software Engineer, too
-            </Typography>
-            <Box sx={{ margin: "2rem 0" }}>
-              <Link
-                href="https://www.github.com/dclancy89"
-                target="_blank"
-                variant="button"
-                underline="none"
+              <Typography
+                variant="h1"
+                sx={(theme) => ({
+                  fontFamily: "ShadowsIntoLight",
+                  fontSize: "10rem",
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "3rem",
+                  },
+                  fontWeight: "bold",
+                })}
               >
-                <GitHubIcon
-                  sx={{ fontSize: "5rem", margin: "0 1rem", color: "#ffc400" }}
-                />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/dclancy89"
-                target="_blank"
-                variant="button"
-                underline="none"
+                Daniel T Clancy
+              </Typography>
+              <Typography
+                variant="h3"
+                sx={(theme) => ({
+                  fontFamily: "ShadowsIntoLight",
+                  fontSize: "4rem",
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "1.5rem",
+                  },
+                })}
               >
-                <LinkedInIcon
-                  sx={{ fontSize: "5rem", margin: "0 1rem", color: "#ffc400" }}
-                />
-              </Link>
+                Father, Husband, Problem Solver
+              </Typography>
+              <Typography
+                variant="h3"
+                sx={(theme) => ({
+                  fontFamily: "ShadowsIntoLight",
+                  fontSize: "4rem",
+                  [theme.breakpoints.down("sm")]: {
+                    fontSize: "1.5rem",
+                  },
+                })}
+              >
+                Software Engineer, too
+              </Typography>
+              <Box sx={{ margin: "2rem 0" }}>
+                <Link
+                  href="https://www.github.com/dclancy89"
+                  target="_blank"
+                  variant="button"
+                  underline="none"
+                >
+                  <GitHubIcon
+                    sx={(theme) => ({
+                      fontSize: "5rem",
+                      [theme.breakpoints.down("sm")]: {
+                        fontSize: "3rem",
+                      },
+                      margin: "0 1rem",
+                      color: colors.yellow,
+                    })}
+                  />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/dclancy89"
+                  target="_blank"
+                  variant="button"
+                  underline="none"
+                >
+                  <LinkedInIcon
+                    sx={(theme) => ({
+                      fontSize: "5rem",
+                      [theme.breakpoints.down("sm")]: {
+                        fontSize: "3rem",
+                      },
+                      margin: "0 1rem",
+                      color: colors.yellow,
+                    })}
+                  />
+                </Link>
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </Container>
+        </Container>
+      </ThemeProvider>
     </>
   );
 }
