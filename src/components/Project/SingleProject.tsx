@@ -1,39 +1,39 @@
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Paper,
-  Typography,
-} from "@mui/material";
-import CircleIcon from "@mui/icons-material/Circle";
+import { Paper, useTheme, Typography } from "@mui/material";
+
 import { Project } from "../../types/Project";
 import GenericList from "../GenericList/GenericList";
 
 const SingleProject = (props: { project: Project }) => {
-  console.log(props.project);
+  const theme = useTheme();
+
   const project = props.project;
   return (
     <>
       <Paper
         elevation={3}
-        sx={{
+        sx={(theme) => ({
           margin: "5rem 0 0 0",
-          padding: "1.5rem",
+          padding: "2rem",
+          [theme.breakpoints.down("sm")]: {
+            padding: "1rem",
+          },
           color: "white",
-          width: "100%",
+          width: "90%",
           maxWidth: "1200px",
           backgroundColor: "rgba(0,0,0,0.5)",
-        }}
+        })}
       >
         <Typography
           variant="h3"
-          sx={{
+          sx={(theme) => ({
             padding: "0 0 0 8px",
             margin: "0 0 2rem 0",
             borderLeft: "2px solid white",
             borderBottom: "2px solid white",
-          }}
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "2rem",
+            },
+          })}
         >
           {project.title}
         </Typography>

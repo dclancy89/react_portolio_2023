@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container, useTheme, Typography } from "@mui/material";
 import SingleProject from "../Project/SingleProject";
 import { Project } from "../../types/Project";
 
@@ -15,6 +15,8 @@ const ProjectsContainer = () => {
     space: "kcvl89buhv7w",
     accessToken: "eoqSTvbMrsZb5S6sSjVpeIFyAtmfOV2mWBpma3kVbJQ",
   });
+
+  const theme = useTheme();
 
   useEffect(() => {
     client.getEntries().then((entries) => {
@@ -42,13 +44,16 @@ const ProjectsContainer = () => {
       >
         <Typography
           variant="h2"
-          sx={{
+          sx={(theme) => ({
             color: colors.yellow,
             marginTop: "6rem",
             fontSize: "6rem",
+            [theme.breakpoints.down("sm")]: {
+              fontSize: "3rem",
+            },
             fontFamily: "ShadowsIntoLight",
             fontWeight: "bold",
-          }}
+          })}
         >
           Notable Projects
         </Typography>

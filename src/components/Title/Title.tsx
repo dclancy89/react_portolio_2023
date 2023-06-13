@@ -14,15 +14,6 @@ import { colors } from "../../constants";
 function Title() {
   const theme = useTheme();
 
-  const styles = (theme: any) => ({
-    title: {
-      fontSize: "10rem",
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "6rem",
-      },
-    },
-  });
-
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -66,6 +57,9 @@ function Title() {
                   [theme.breakpoints.down("sm")]: {
                     fontSize: "3rem",
                   },
+                  [theme.breakpoints.down("md")]: {
+                    fontSize: "6rem",
+                  },
                   fontWeight: "bold",
                 })}
               >
@@ -79,6 +73,9 @@ function Title() {
                   [theme.breakpoints.down("sm")]: {
                     fontSize: "1.5rem",
                   },
+                  [theme.breakpoints.down("md")]: {
+                    fontSize: "3rem",
+                  },
                 })}
               >
                 Father, Husband, Problem Solver
@@ -90,6 +87,9 @@ function Title() {
                   fontSize: "4rem",
                   [theme.breakpoints.down("sm")]: {
                     fontSize: "1.5rem",
+                  },
+                  [theme.breakpoints.down("md")]: {
+                    fontSize: "3rem",
                   },
                 })}
               >
